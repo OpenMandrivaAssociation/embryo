@@ -1,10 +1,10 @@
 %define	name	embryo
-%define version 0.9.1.041
-%define release %mkrel 2
+%define version 0.9.1.042
+%define release %mkrel 1
 
 %define major 	0
 %define libname %mklibname %{name} %major
-%define libnamedev %mklibname %{name} %major -d
+%define libnamedev %mklibname %{name} -d
 
 Summary: 	Enlightenment bytecode virtual machine
 Name: 		%{name}
@@ -12,10 +12,9 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
-URL: 		http://get-e.org/
+URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	multiarch-utils
 
 %description
 Embryo is primarily a shared library that gives you an API to load and control
@@ -28,7 +27,6 @@ This package is part of the Enlightenment DR17 desktop shell.
 %package -n %libname
 Summary: Libraries for the %{name} package
 Group: System/Libraries
-Provides: %libname = %{version}-%{release}
 
 %description -n %libname
 Libraries for %{name}
@@ -41,7 +39,7 @@ Provides: lib%{name}-devel = %{version}-%{release}
 Provides: %name-devel = %{version}-%{release}
 
 %description -n %libnamedev
-%{name} development headers and libraries
+%{name} development headers and libraries.
 
 %prep
 %setup -q 
@@ -53,8 +51,6 @@ Provides: %name-devel = %{version}-%{release}
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall
-cp -v $RPM_BUILD_DIR/%name-%version/%name-config %buildroot/%_bindir/
-%multiarch_binaries %buildroot/%_bindir/%name-config
 
 %post -n %libname -p /sbin/ldconfig
 %postun -n %libname -p /sbin/ldconfig
@@ -79,7 +75,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.a
 %{_libdir}/*.la
 %{_includedir}/*.h
-%{_bindir}/%name-config
-%multiarch %multiarch_bindir/%name-config
 
 
