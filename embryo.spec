@@ -1,6 +1,6 @@
 %define	name	embryo
-%define version 0.9.1.042
-%define release %mkrel 3
+%define version 0.9.9.043
+%define release %mkrel 1
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -13,7 +13,7 @@ Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
-Source: 	%{name}-%{version}.tar.bz2
+Source: 	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 
 %description
