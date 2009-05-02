@@ -70,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %libname
 %defattr(-,root,root)
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{majo}*
 
 %files -n %libnamedev
 %defattr(-,root,root)
