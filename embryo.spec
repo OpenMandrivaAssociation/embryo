@@ -1,6 +1,6 @@
 %define	name	embryo
-%define version 0.9.9.050
-%define release %mkrel 2
+%define version 0.9.9.060
+%define release %mkrel 1
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -50,7 +50,7 @@ Provides: %name-devel = %{version}-%{release}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall_std
 
 %if %mdkversion < 200900
 %post -n %libname -p /sbin/ldconfig
