@@ -1,5 +1,5 @@
 %define	name	embryo
-%define version 0.9.9.061
+%define version 0.9.9.062
 %define release %mkrel 1
 
 %define major 	0
