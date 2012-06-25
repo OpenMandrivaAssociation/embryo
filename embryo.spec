@@ -11,7 +11,7 @@
 #cd ..; \
 #tar -Jcf embryo-$PKG_VERSION.tar.xz embryo/ --exclude .svn --exclude .*ignore
 
-%define snapshot 1
+%define snapshot 0
 %{?_snapshot: %{expand: %%global snapshot 1}}
 
 %if %snapshot
@@ -29,7 +29,7 @@ Name:		embryo
 Version:	1.1.99.%{svnrev}
 Release:	0.%{svndate}.1
 %else
-Version:	1.1.0
+Version:	1.2.0
 Release:	1
 %endif
 License:	BSD
@@ -38,9 +38,9 @@ URL:		http://www.enlightenment.org/
 %if %snapshot
 Source0:	%{name}-%{version}.tar.xz
 %else
-Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.xz
+Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
 %endif
-BuildRequires:	pkgconfig(eina)
+BuildRequires:	pkgconfig(eina) >= 1.2.0
 
 %description
 Embryo is primarily a shared library that gives you an API to load and control
