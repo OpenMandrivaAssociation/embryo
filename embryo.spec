@@ -4,12 +4,12 @@
 
 Summary:	Enlightenment bytecode virtual machine
 Name:		embryo
-Version:	1.7.6
+Version:	1.7.7
 Release:	1
 License:	BSD
 Group:		Graphical desktop/Enlightenment
 URL:		http://www.enlightenment.org/
-Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.gz
+Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(eina) >= 1.7.0
 
 %description
