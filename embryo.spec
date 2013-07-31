@@ -4,11 +4,11 @@
 
 Summary:	Enlightenment bytecode virtual machine
 Name:		embryo
-Version:	1.7.7
+Version:	1.7.8
 Release:	1
 License:	BSD
 Group:		Graphical desktop/Enlightenment
-URL:		http://www.enlightenment.org/
+Url:		http://www.enlightenment.org/
 Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(eina) >= 1.7.0
 
@@ -25,7 +25,7 @@ Summary:	Libraries for the %{name} package
 Group:		System/Libraries
 
 %description -n %{libname}
-Libraries for %{name}
+Libraries for %{name}.
 
 %package -n %{devname}
 Summary:	Headers and development libraries from %{name}
@@ -56,6 +56,6 @@ Provides:	%{name}-devel = %{version}-%{release}
 
 %files -n %{devname}
 %{_libdir}/pkgconfig/*
-%{_libdir}/*.so
+%{_libdir}/lib%{name}.so
 %{_includedir}/%{name}*
 
